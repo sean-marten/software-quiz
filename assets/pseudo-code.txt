@@ -1,0 +1,6 @@
+1. Need an object array for quiz questions with possible answers.
+2. Need to be able to associate possible answers with true/false (for right/wrong).
+3. Need a button if they reload - pick up where you left off? - Will require local storage for timer, and questions answered already
+4. Need local storage for high scores
+5. Need an array for high scores to be able to display them.
+6. Need code to display a finished page
