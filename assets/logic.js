@@ -1,10 +1,20 @@
 $(document).ready(function () {
+    const $timer = $(".timer");
     let $response = $(".response");
   let $container = $(".container");
   const $button = $(".btn");
   let qIndex = 0;
+  let time = 60;
   renderQuestions(0);
   $button.attr('disabled', true);
+
+  timer =  setInterval(function() {
+    if (time === 0) {
+        return
+    }
+    $timer.text("Timer: " + (time - 1));
+    time--;
+  }, 1000)
 
   function renderQuestions() {
       $container.html("");
