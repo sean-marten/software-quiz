@@ -9,7 +9,7 @@
       integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
       crossorigin="anonymous"
     />
-    <link rel="sylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="./assets/style/style.css"/>
     <title>Document</title>
   </head>
   <body>
@@ -23,13 +23,16 @@
         >Timer: 60</a
       >
     </nav>
-    <div class="largeContainer">
+    <div class="container col-xs col-4">
       <div class="start">Click to start</div>
-      <div class="container"></div>
-      <div>
-        <button class="btn"></button>
+      <div class="main-content">
+        <div class="question"></div>
+        <div class="answers"></div>
       </div>
       <div class="response"></div>
+      <div class='btn-div'>
+<button style="display:none" type="button" class="btn btn-info">Next Question!</button>
+      </div>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -46,7 +49,7 @@
       integrity="sha384-XEerZL0cuoUbHE4nZReLT7nx9gQrQreJekYhJD9WNWhH8nEW+0c5qq7aIo2Wl30J"
       crossorigin="anonymous"
     ></script>
-    <script src="./assets/test-questions.js"></script>
-    <script src="./assets/logic.js"></script>
+    <script src="./assets/logic/logic.js"></script>
+    <script src="./assets/logic/test-questions.js"></script>
   </body>
 </html>
