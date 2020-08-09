@@ -1,3 +1,7 @@
+/*
+UI Styling 
+ */
+ 
 .background-image {
   width: 100%;
   height: 100%;
@@ -5,8 +9,22 @@
   z-index: -1;
 }
 
+.nav {
+  background-color: lightblue;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
 .container {
   text-align: center;
+}
+
+.top,
+.response {
+  margin: 30px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: aquamarine;
 }
 
 .answers {
@@ -21,14 +39,6 @@
   border-radius: 7px;
   overflow: auto;
 }
-.top,
-.response {
-  margin: auto;
-  margin: 30px;
-  padding: 10px;
-  border-radius: 15px;
-  background-color: aquamarine;
-}
 
 .response {
   display: inline-block;
@@ -36,12 +46,6 @@
   width: 25%;
   margin: 10px;
   background-color: transparent;
-}
-
-.nav {
-  background-color: lightblue;
-  padding: 10px;
-  margin-bottom: 20px;
 }
 
 .btn {

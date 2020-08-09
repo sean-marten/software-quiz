@@ -1,4 +1,5 @@
 $(document).ready(function () {
+  // Declare html variables
   const $highScores = $(".highscores");
   const $timer = $(".timer");
   const $top = $(".top");
@@ -8,12 +9,15 @@ $(document).ready(function () {
   const $hsLabel = $(".high-score-label");
   const $name = $(".high-score-input");
   const $hsButton = $(".hs-btn");
+
+  // Declare empty variables for tracking during the quiz
   let qIndex;
   let time;
   let correctAnswers;
   let timer;
   let highscores = [];
 
+  // Initialize the quiz by checking if there is locally stored quiz data
   function init() {
     var storedHighScores = JSON.parse(localStorage.getItem("highscores"));
 
@@ -22,6 +26,7 @@ $(document).ready(function () {
     }
   }
 
+  // Method to start the timer
   function startTimer() {
     timer = setInterval(function () {
       $timer.text("Timer: " + time);
@@ -34,19 +39,21 @@ $(document).ready(function () {
     }, 1000);
   }
 
+  // Method to stop the timer
   function stopTimer() {
     time = 0;
-    console.log(timer);
     if (timer) {
-      console.log("why am i trying to do this");
       clearInterval(timer);
     }
   }
 
+  // Method to display the finish page
   function displayFinishPage() {
     resetContent();
     $hsLabel.css("display", "block");
     $hsButton.css("display", "inline-block");
+    $qButton.css("display", "none");
+    $response.css("backgroundColor", "transparent");
     $top
       .text(
         `Congratulations on completing the coding quiz! You got ${correctAnswers} questions correct out of 10.`
@@ -54,6 +61,7 @@ $(document).ready(function () {
       .css("font-size", "20px");
   }
 
+  // Method to display the high scores
   function displayHighScores() {
     resetContent();
     $top.text("Click here to start a new quiz");
@@ -77,6 +85,7 @@ $(document).ready(function () {
     }
   }
 
+  // Method to render questions with their answers on the page
   function renderQuestions() {
     if (qIndex < questions.length) {
       resetContent();
@@ -96,17 +105,20 @@ $(document).ready(function () {
     }
   }
 
+  // Method to reset the content upon a transition
   function resetContent() {
     $top.empty();
     $answers.empty();
     $response.empty();
   }
 
+  // Event listener to handle displaying high scores when the nav link is clicked
   $highScores.on("click", function () {
     stopTimer();
     displayHighScores();
   });
 
+  // Event listener to handle event delegation for answer selection
   $answers.on("click", ".answer", function () {
     var ind = $(this).attr("a-index");
     var answer = questions[qIndex].answers[ind];
@@ -117,16 +129,18 @@ $(document).ready(function () {
       $response.text("Correct!");
       correctAnswers++;
       $(this).css("backgroundColor", "green");
+      $response.css("backgroundColor", "green");
     } else {
-      $response.text("Wrong.");
+      $response.text("Wrong!");
       time -= 5;
       $(this).css("backgroundColor", "red");
+      $response.css("backgroundColor", "red");
     }
     $qButton.text("Next question!");
     $qButton.css("display", "inline-block");
-    $response.css("backgroundColor", "aquamarine");
   });
 
+  // Event listener to handle movement to the next question
   $qButton.on("click", function () {
     qIndex++;
     renderQuestions();
@@ -134,6 +148,7 @@ $(document).ready(function () {
     $response.css("backgroundColor", "transparent");
   });
 
+  // Event listener to handle the submission of a new high score
   $hsButton.on("click", function () {
     let userName = $name.val();
     highscores.push({
@@ -144,10 +159,14 @@ $(document).ready(function () {
     displayHighScores();
   });
 
+  // 
   $top.on("click", function () {
+    if ($top.text() !== "Click here to start a new quiz") {
+      return
+    }
     qIndex = 0;
     correctAnswers = 0;
-    time = 120;
+    time = 12;
     renderQuestions();
     startTimer();
   });

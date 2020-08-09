@@ -18,27 +18,31 @@
       src="./assets/style/pictures/coding-background.jpg"
       alt="Coding background"
     />
+
+    <!-- Navbar -->
     <nav class="nav">
       <a class="nav-link active highscores" href="#">View Highscores</a>
-      <a
-        class="nav-link ml-auto timer"
-        href="#"
-        tabindex="-1"
-        aria-disabled="true"
+      <a class="nav-link ml-auto timer" tabindex="-1" aria-disabled="true"
         >Timer</a
       >
     </nav>
-    <div class="container col-xs">
+    <!-- End of navbar -->
+
+    <!-- Main content -->
+    <main class="container col-xs">
+      <!-- Header to start new quiz -->
       <h3 class="top">Click here to start a new quiz</h3>
-      <div class="main-content">
-        <div class="answers"></div>
-      </div>
-      <div class="text-center response"></div>
-      <div class="btn-div text-center">
+      <!-- Empty section for lists of possible answers -->
+      <section class="answers"></section>
+      <!-- Empty details for the response (right or wrong) -->
+      <section class="text-center response"></section>
+      <!-- Button to proceed to next question -->
+      <section class="btn-div text-center">
         <button style="display: none;" type="button" class="q-btn btn btn-info">
           Next Question!
         </button>
-      </div>
+      </section>
+      <!-- Input for user name -->
       <label class="high-score-label" style="display: none;">
         <input
           class="high-score-input"
@@ -46,7 +50,8 @@
           placeholder="Enter your name"
         />
       </label>
-      <div class="btn-div text-center">
+      <!-- Button to submit highscore -->
+      <section class="btn-div text-center">
         <button
           style="display: none;"
           type="button"
@@ -54,8 +59,10 @@
         >
           Submit Highscore
         </button>
-      </div>
-    </div>
+      </section>
+    </main>
+    <!-- End of main content -->
+
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
