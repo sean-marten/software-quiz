@@ -159,14 +159,14 @@ $(document).ready(function () {
     displayHighScores();
   });
 
-  // 
+  // Event listener to handle starting a new quiz
   $top.on("click", function () {
     if ($top.text() !== "Click here to start a new quiz") {
       return
     }
     qIndex = 0;
     correctAnswers = 0;
-    time = 12;
+    time = 120;
     renderQuestions();
     startTimer();
   });

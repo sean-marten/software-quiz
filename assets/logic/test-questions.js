@@ -1,18 +1,18 @@
 let questions = [
   {
-    questionText: "What is bootstrap?",
+    questionText: "What is JavaScript?",
     answers: [
       {
-        text: "Something you use on your shoes.",
+        text: "A markup language.",
         correct: false,
       },
       {
         text: "A CSS framework.",
-        correct: true,
+        correct: false,
       },
       {
-        text: "A backend programming language.",
-        correct: false,
+        text: "A non-strict type programming language.",
+        correct: true,
       },
       {
         text: "A database management system.",
@@ -109,23 +109,23 @@ let questions = [
   },
   {
     questionText:
-      "What is the proper way to link a CSS file in the header of your HTML?",
+      "What is the browser console used for?",
     answers: [
       {
-        text: '<link rel="stylesheet" href="{cssfilepath}" />',
+        text: 'Looking at your apps on different screen sizes.',
+        correct: false,
+      },
+      {
+        text: 'Debugging your apps.',
+        correct: false,
+      },
+      {
+        text: 'Making live changes to your app for testing.',
+        correct: false,
+      },
+      {
+        text: 'All of the above',
         correct: true,
-      },
-      {
-        text: '<link rel="css" href="{cssfilepath}" />',
-        correct: false,
-      },
-      {
-        text: '<link rel="stylesheet" href="{cssfilepath}">',
-        correct: false,
-      },
-      {
-        text: '<link rel="stylesheet" />',
-        correct: false,
       },
     ],
   },
