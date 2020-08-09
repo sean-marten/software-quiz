@@ -12,14 +12,30 @@ This repository has some unique features, which are outlined below:
 
 ## Github links
 
-[Homework-4 Github Repository](https://github.com/sean-marten/password-generator)
+[Homework-4 Github Repository](https://github.com/sean-marten/software-quiz)
 
-[Homework-4 Webpage](https://sean-marten.github.io/password-generator/src/index.html)
+[Homework-4 Webpage](https://sean-marten.github.io/software-quiz/)
 
 ## Images of Webpages
 
 The web page consists of a simple navbar for the highscore navigation. This web page changes dynamically between the start, questions, finish and high score pages. The use of this page is shown in a gif below.
 
-### Webpage in use:
+### Webpage at start:
 
-![screenshot](./src/assets/pictures/page-at-load.png)
+![screenshot](./assets/pictures/page-at-start.png)
+
+### Webpage question correct:
+
+![screenshot](./assets/pictures/question-correct.png)
+
+### Webpage question wrong:
+
+![screenshot](./assets/pictures/question-incorrect.png)
+
+### Webpage at finish:
+
+![screenshot](./assets/pictures/page-at-finish.png)
+
+### Webpage highscores:
+
+![screenshot](./assets/pictures/highscore-page.png)
