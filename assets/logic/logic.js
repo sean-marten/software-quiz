@@ -2,7 +2,6 @@ $(document).ready(function () {
   const $highScores = $(".highscores");
   const $timer = $(".timer");
   const $start = $(".start");
-  const $container = $(".container");
   const $response = $(".response");
   const $question = $(".question");
   const $answers = $(".answers");
@@ -13,20 +12,17 @@ $(document).ready(function () {
   let qIndex;
   let time;
   let correctAnswers;
-  let highscores = [
-    {
-      name: "sean",
-      score: 10,
-    },
-    {
-      name: "ay",
-      score: 2,
-    },
-    {
-      name: "poo",
-      score: 22,
-    },
-  ];
+  let timer;
+  let highscores = [];
+
+
+  function init() {
+    var storedHighScores = JSON.parse(localStorage.getItem("highscores"));
+
+    if (storedHighScores !== null) {
+      highscores = storedHighScores;
+    }
+  }
 
   function startTimer() {
     timer = setInterval(function () {
@@ -42,7 +38,11 @@ $(document).ready(function () {
 
   function stopTimer() {
     time = 0;
-    clearInterval(timer);
+    console.log(timer);
+    if(timer) {
+      console.log("why am i trying to do this")
+      clearInterval(timer);
+    }
   }
 
   function displayFinishPage() {
@@ -68,7 +68,7 @@ $(document).ready(function () {
     for (let i = 0; i < highscores.length; i++) {
       const $li = $("<li>")
         .addClass("list-items")
-        .text(i + 1 + highscores[i].name + highscores[i].score);
+        .text(`${highscores[i].score} points: ${highscores[i].name}`);
       $answers.append($li);
     }
   }
@@ -133,6 +133,7 @@ $(document).ready(function () {
       name: userName,
       score: correctAnswers,
     });
+    localStorage.setItem("highscores", JSON.stringify(highscores));
     displayHighScores();
   });
 
@@ -144,4 +145,6 @@ $(document).ready(function () {
     renderQuestions();
     startTimer();
   });
+
+  init();
 });
