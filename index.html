@@ -9,7 +9,7 @@
       integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./assets/style/style.css"/>
+    <link rel="stylesheet" href="./assets/style/style.css" />
     <title>Document</title>
   </head>
   <body>
@@ -20,7 +20,7 @@
         href="#"
         tabindex="-1"
         aria-disabled="true"
-        >Timer: 60</a
+        >Timer</a
       >
     </nav>
     <div class="container col-xs col-6">
@@ -30,8 +30,26 @@
         <div class="answers"></div>
       </div>
       <div class="response"></div>
-      <div class='btn-div'>
-<button style="display:none" type="button" class="btn btn-info">Next Question!</button>
+      <div class="btn-div text-center">
+        <button style="display: none;" type="button" class="q-btn btn btn-info">
+          Next Question!
+        </button>
+      </div>
+      <label class="high-score-label" style="display: none;">
+        <input
+          class="high-score-input"
+          type="text"
+          placeholder="Enter your name"
+        />
+      </label>
+      <div class="btn-div text-center">
+        <button
+          style="display: none;"
+          type="button"
+          class="hs-btn text-center btn btn-info"
+        >
+          Submit Highscore
+        </button>
       </div>
     </div>
     <script
