@@ -1,50 +1,85 @@
 $(document).ready(function () {
-  const $highSores = $(".highscores");
+  const $highScores = $(".highscores");
   const $timer = $(".timer");
   const $start = $(".start");
+  const $container = $(".container");
   const $response = $(".response");
   const $question = $(".question");
   const $answers = $(".answers");
   const $button = $(".btn");
   let qIndex = 0;
-  let time = 60;
+  let time = 59;
   let correctAnswers = 0;
-
-  function startTimer(stop) {
-    if (stop) {
-      return;
+  let highscores = [
+    {
+      name: 'sean',
+      score: 10,
+    },
+    {
+      name: 'ay',
+      score: 2,
+    },
+    {
+      name: 'poo',
+      score: 22,
     }
+  ];
+
+  function timerFunction() {
     timer = setInterval(function () {
+      $timer.text("Timer: " + (time));
       if (time === 0) {
         displayFinishPage();
         return;
       }
-      $timer.text("Timer: " + (time - 1));
       time--;
     }, 1000);
   }
 
+  function stopTimer() {
+        time = 0;
+  }
+
   function displayFinishPage() {}
 
-  function displayHighScores() {}
-
-  function renderQuestions() {
+  function displayHighScores() {
+    $start.text("Click here to start a new quiz");
     $question.empty();
     $answers.empty();
     $response.empty();
-    const $p = $("<p>").text(questions[qIndex].questionText);
-    $question.append($p).attr("q-index", qIndex);
-    for (j = 0; j < questions[qIndex].answers.length; j++) {
-      const $li = $("<li>")
-        .text(questions[qIndex].answers[j].text)
-        .addClass("answer")
-        .attr("a-index", j);
+    $button.css('display', 'none');
+    highscores.sort(function(a,b) {
+      return b.score-a.score;
+    })
+    for (let i = 0; i < highscores.length; i++) {
+      const $li = $("<li>").addClass("answer")
+        .text((i+1) + highscores[i].name + highscores[i].score);
       $answers.append($li);
     }
   }
 
-  $highSores.on("click", function () {
-    startTimer(true);
+  function renderQuestions() {
+    if (qIndex < questions.length) {
+      $question.empty();
+      $answers.empty();
+      $response.empty();
+      const $p = $("<p>").text(questions[qIndex].questionText);
+      $question.append($p).attr("q-index", qIndex);
+      for (j = 0; j < questions[qIndex].answers.length; j++) {
+        const $li = $("<li>")
+          .text(questions[qIndex].answers[j].text)
+          .addClass("answer")
+          .attr("a-index", j);
+        $answers.append($li);
+      }
+    } else {
+      stopTimer();
+      displayFinishPage();
+    }
+  }
+
+  $highScores.on("click", function () {
+    stopTimer();
     displayHighScores();
   });
 
@@ -75,6 +110,6 @@ $(document).ready(function () {
   $start.on("click", function () {
     $(this).html("");
     renderQuestions();
-    startTimer(false);
+    timerFunction();
   });
 });
