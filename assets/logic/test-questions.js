@@ -43,178 +43,175 @@ let questions = [
     ],
   },
   {
-    questionText: "What is hoisting?",
+    questionText: "What does DOM stand for in relation to web browsers?",
     answers: [
       {
-        text: "When you redeclare a vaiable.",
-        correct: false,
-      },
-      {
-        text: "The authority of 'this' within a script.",
-        correct: false,
-      },
-      {
-        text:
-          "When variables and functions are moved to the top of a javascript file upon compilation.",
+        text: "Document object model.",
         correct: true,
       },
       {
-        text: "When a really strong person lifts something heavy.",
+        text: "Direct object model.",
+        correct: false,
+      },
+      {
+        text: "Document object maintenance.",
+        correct: false,
+      },
+      {
+        text: "Do over method",
         correct: false,
       },
     ],
   },
   {
-    questionText: "What is hoisting?",
+    questionText:
+      "When adding script tags to your HTML document, where is the safest place to put them?",
     answers: [
       {
-        text: "When you redeclare a vaiable.",
+        text: "Outside of the <html></html> tags.",
         correct: false,
       },
       {
-        text: "The authority of 'this' within a script.",
+        text: "At the very top of the document.",
         correct: false,
       },
       {
-        text:
-          "When variables and functions are moved to the top of a javascript file upon compilation.",
+        text: "In the <head></head> tag.",
+        correct: false,
+      },
+      {
+        text: "Right before the end of the <body></body> tag.",
+        correct: true,
+      },
+    ],
+  },
+  {
+    questionText:
+      "If you refer to 'this' in a nested function of a function within an object, what does it return? (Note: no prototype methods are used).",
+    answers: [
+      {
+        text: "The object it is within.",
+        correct: false,
+      },
+      {
+        text: "The window object.",
         correct: true,
       },
       {
-        text: "When a really strong person lifts something heavy.",
+        text: "The nearest variable declaration.",
+        correct: false,
+      },
+      {
+        text: "The current class you are in.",
         correct: false,
       },
     ],
   },
   {
-    questionText: "What is hoisting?",
+    questionText:
+      "What is the proper way to link a CSS file in the header of your HTML?",
     answers: [
       {
-        text: "When you redeclare a vaiable.",
-        correct: false,
-      },
-      {
-        text: "The authority of 'this' within a script.",
-        correct: false,
-      },
-      {
-        text:
-          "When variables and functions are moved to the top of a javascript file upon compilation.",
+        text: '<link rel="stylesheet" href="{cssfilepath}" />',
         correct: true,
       },
       {
-        text: "When a really strong person lifts something heavy.",
+        text: '<link rel="css" href="{cssfilepath}" />',
+        correct: false,
+      },
+      {
+        text: '<link rel="stylesheet" href="{cssfilepath}">',
+        correct: false,
+      },
+      {
+        text: '<link rel="stylesheet" />',
         correct: false,
       },
     ],
   },
   {
-    questionText: "What is hoisting?",
+    questionText: "What does the modulo operator do?",
     answers: [
       {
-        text: "When you redeclare a vaiable.",
-        correct: false,
-      },
-      {
-        text: "The authority of 'this' within a script.",
-        correct: false,
-      },
-      {
         text:
-          "When variables and functions are moved to the top of a javascript file upon compilation.",
+          "Multiplies two values and assigns the result to the first variable.",
+        correct: false,
+      },
+      {
+        text: "Returns the remainder of a two numbers.",
         correct: true,
       },
       {
-        text: "When a really strong person lifts something heavy.",
+        text: "Determines if a number is even or odd.",
+        correct: false,
+      },
+      {
+        text: "Tells you if a string is iterable.",
         correct: false,
       },
     ],
   },
   {
-    questionText: "What is hoisting?",
+    questionText: "Which of the following is NOT an HTTP verb?",
     answers: [
       {
-        text: "When you redeclare a vaiable.",
+        text: "PATCH",
         correct: false,
       },
       {
-        text: "The authority of 'this' within a script.",
+        text: "PUT",
         correct: false,
       },
       {
-        text:
-          "When variables and functions are moved to the top of a javascript file upon compilation.",
+        text: "GET",
+        correct: false,
+      },
+      {
+        text: "FETCH",
+        correct: true,
+      },
+    ],
+  },
+  {
+    questionText: "What jQuery function allows one to make API requests?",
+    answers: [
+      {
+        text: "Webclient",
+        correct: false,
+      },
+      {
+        text: "HTTPRequests",
+        correct: false,
+      },
+      {
+        text: "AJAX",
         correct: true,
       },
       {
-        text: "When a really strong person lifts something heavy.",
+        text: "JSON",
         correct: false,
       },
     ],
   },
   {
-    questionText: "What is hoisting?",
+    questionText:
+      "Constant variables are not usually able to be modified. With constant arrays, you can concatenate them, how would you do this?",
     answers: [
       {
-        text: "When you redeclare a vaiable.",
+        text: "By using the Concat() prototype method",
         correct: false,
       },
       {
-        text: "The authority of 'this' within a script.",
+        text: "By using the dot operator.",
         correct: false,
       },
       {
-        text:
-          "When variables and functions are moved to the top of a javascript file upon compilation.",
+        text: "By adding them together with an addition operator.",
+        correct: false,
+      },
+      {
+        text: "By using the spread/rest operator.",
         correct: true,
-      },
-      {
-        text: "When a really strong person lifts something heavy.",
-        correct: false,
-      },
-    ],
-  },
-  {
-    questionText: "What is hoisting?",
-    answers: [
-      {
-        text: "When you redeclare a vaiable.",
-        correct: false,
-      },
-      {
-        text: "The authority of 'this' within a script.",
-        correct: false,
-      },
-      {
-        text:
-          "When variables and functions are moved to the top of a javascript file upon compilation.",
-        correct: true,
-      },
-      {
-        text: "When a really strong person lifts something heavy.",
-        correct: false,
-      },
-    ],
-  },
-  {
-    questionText: "What is hoisting?",
-    answers: [
-      {
-        text: "When you redeclare a vaiable.",
-        correct: false,
-      },
-      {
-        text: "The authority of 'this' within a script.",
-        correct: false,
-      },
-      {
-        text:
-          "When variables and functions are moved to the top of a javascript file upon compilation.",
-        correct: true,
-      },
-      {
-        text: "When a really strong person lifts something heavy.",
-        correct: false,
       },
     ],
   },
