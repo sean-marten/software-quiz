@@ -68,7 +68,7 @@ $(document).ready(function () {
     for (let i = 0; i < highscores.length; i++) {
       const $li = $("<li>")
         .addClass("list-items")
-        .text(`${highscores[i].score} points: ${highscores[i].name}`);
+        .text(`${highscores[i].score}/10 - ${highscores[i].name}`);
       $answers.append($li);
     }
   }
@@ -115,6 +115,7 @@ $(document).ready(function () {
       $(this).css("backgroundColor", "green");
     } else {
       $response.text("Wrong.");
+      time -= 5;
       $(this).css("backgroundColor", "red");
     }
     $qButton.text("Next question!");
