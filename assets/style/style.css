@@ -1,19 +1,53 @@
+.background-image {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -1;
+}
+
 .container {
-    text-align: center;
+  text-align: center;
 }
 
 .answers {
-    text-align: left;
-    list-style-type: none;
+  text-align: left;
+  list-style-type: none;
 }
 
 .list-items {
-    margin-bottom: 10px;
-    padding: 5px;
-    background-color: lightblue;
-    border-radius: 7px;
-    overflow: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: lightblue;
+  border-radius: 7px;
+  overflow: auto;
 }
-.start {
-    margin-bottom: 10px;
+.top,
+.response {
+  margin: auto;
+  margin: 30px;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: aquamarine;
+}
+
+.response {
+  display: inline-block;
+  text-align: center;
+  width: 25%;
+  margin: 10px;
+  background-color: transparent;
+}
+
+.nav {
+  background-color: lightblue;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+.high-score-input {
+  text-align: center;
 }

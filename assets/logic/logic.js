@@ -1,9 +1,8 @@
 $(document).ready(function () {
   const $highScores = $(".highscores");
   const $timer = $(".timer");
-  const $start = $(".start");
+  const $top = $(".top");
   const $response = $(".response");
-  const $question = $(".question");
   const $answers = $(".answers");
   const $qButton = $(".q-btn");
   const $hsLabel = $(".high-score-label");
@@ -14,7 +13,6 @@ $(document).ready(function () {
   let correctAnswers;
   let timer;
   let highscores = [];
-
 
   function init() {
     var storedHighScores = JSON.parse(localStorage.getItem("highscores"));
@@ -39,8 +37,8 @@ $(document).ready(function () {
   function stopTimer() {
     time = 0;
     console.log(timer);
-    if(timer) {
-      console.log("why am i trying to do this")
+    if (timer) {
+      console.log("why am i trying to do this");
       clearInterval(timer);
     }
   }
@@ -49,7 +47,7 @@ $(document).ready(function () {
     resetContent();
     $hsLabel.css("display", "block");
     $hsButton.css("display", "inline-block");
-    $question
+    $top
       .text(
         `Congratulations on completing the coding quiz! You got ${correctAnswers} questions correct out of 10.`
       )
@@ -57,18 +55,24 @@ $(document).ready(function () {
   }
 
   function displayHighScores() {
-    $start.text("Click here to start a new quiz");
     resetContent();
+    $top.text("Click here to start a new quiz");
     $qButton.css("display", "none");
     $hsButton.css("display", "none");
     $hsLabel.css("display", "none");
     highscores.sort(function (a, b) {
       return b.score - a.score;
     });
+    const $li = $("<li>")
+      .addClass("list-items text-center")
+      .css("text-align", "center")
+      .css("backgroundColor", "orchid")
+      .text("Highscores");
+    $answers.append($li);
     for (let i = 0; i < highscores.length; i++) {
       const $li = $("<li>")
         .addClass("list-items")
-        .text(`${highscores[i].score}/10 - ${highscores[i].name}`);
+        .text(`${highscores[i].score} - ${highscores[i].name}`);
       $answers.append($li);
     }
   }
@@ -77,7 +81,7 @@ $(document).ready(function () {
     if (qIndex < questions.length) {
       resetContent();
       const $p = $("<p>").text(questions[qIndex].questionText);
-      $question.append($p).attr("q-index", qIndex);
+      $top.append($p).attr("q-index", qIndex);
       for (j = 0; j < questions[qIndex].answers.length; j++) {
         const $li = $("<li>")
           .text(questions[qIndex].answers[j].text)
@@ -93,7 +97,7 @@ $(document).ready(function () {
   }
 
   function resetContent() {
-    $question.empty();
+    $top.empty();
     $answers.empty();
     $response.empty();
   }
@@ -120,12 +124,14 @@ $(document).ready(function () {
     }
     $qButton.text("Next question!");
     $qButton.css("display", "inline-block");
+    $response.css("backgroundColor", "aquamarine");
   });
 
   $qButton.on("click", function () {
     qIndex++;
     renderQuestions();
     $qButton.css("display", "none");
+    $response.css("backgroundColor", "transparent");
   });
 
   $hsButton.on("click", function () {
@@ -138,11 +144,10 @@ $(document).ready(function () {
     displayHighScores();
   });
 
-  $start.on("click", function () {
+  $top.on("click", function () {
     qIndex = 0;
     correctAnswers = 0;
-    time = 60;
-    $(this).html("");
+    time = 120;
     renderQuestions();
     startTimer();
   });
